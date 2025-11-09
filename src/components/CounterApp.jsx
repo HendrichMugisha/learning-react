@@ -1,0 +1,33 @@
+import React, { useState } from 'react'
+
+const CounterApp = () => {
+    const [count, setCount ] = useState(0)
+    
+    const increaseCount = () => {
+        setCount(count + 1)
+    }
+
+    const decreaseCount = () =>{
+        setCount(count - 1)
+    }
+
+    const resetCount = () =>{
+        setCount(0)
+    }
+
+    return (
+        <>
+            <h1>
+                CounterApp
+            </h1>
+            <h2>Count: {count}</h2>
+            <button onClick={increaseCount}>Increase count</button>
+
+            <button onClick={decreaseCount}>Decrease count</button>
+            
+            <button onClick={resetCount}>Reset count count</button>
+        </>
+    )
+}
+
+export default CounterApp

@@ -11,7 +11,7 @@ const LearnEvent = () => {
 
             <button onClick={handleClick}>Click Here</button>
             <br />
-            <button onClick={() => handleClickAgain("Clicked Again")}>Click again</button>
+            <button onClick={() => handleClickAgain("Clicked 123")}>Click again</button>
         </>
     )
 }
