@@ -10,18 +10,54 @@ import LearnUseEffect from "./components/LearnUseEffect"
 // import Mycounter from "./components/Mycounter"
 import MyUseState from "./components/MyUseState"
 import LearnUseMemo from "./components/LearnUseMemo"
+import ChildA from "./components/ChildA"
+import { createContext, useState } from "react"
+import LearnUseRef from "./components/LearnUseRef"
+import LearnCustomHooks from "./components/LearnCustomHooks"
+import LearnConditionalRendering from "./components/LearnConditionalRendering"
+import LearnMap from "./components/LearnMap"
+import LearnInlineCss from "./components/LearnInlineCss"
+import LearnLoadingImages from "./components/LearnLoadingImages"
+import LearnForms from "./components/LearnForms"
+
+
+// this is to create the context
+const StockContext = createContext()
+const UserContext = createContext()
+
+
 
 function App() {
-  // let price = 200;
-  let init_count = 10;
-  const getStock = (data) => {
-    console.log(data)
-  }
+  let stock = "Tesla"
+  let price = 100
+
+  const [user, setUser] = useState({ name: "Mark", isLoggedIn: "Yes" })
+
+  // create context, provider the data, consumer
 
   return (
     <>
+    <LearnForms/>
+      {/* <LearnLoadingImages /> */}
+      {/* <LearnInlineCss/> */}
 
-<LearnUseMemo/>
+
+      {/* <LearnMap /> */}
+
+
+      {/* <LearnConditionalRendering /> */}
+
+      {/* <LearnCustomHooks/> */}
+      {/* <LearnUseRef/> */}
+
+      {/* this ispassing the data into the provider */}
+      {/* <StockContext.Provider value={{ stock, price }}>
+        < UserContext.Provider value={{user, setUser}}>
+          <ChildA />
+        </UserContext.Provider>
+      </StockContext.Provider> */}
+
+      {/* <LearnUseMemo/> */}
 
       {/* <MyUseState /> */}
 
@@ -55,3 +91,4 @@ function App() {
 }
 
 export default App
+export { StockContext, UserContext }
