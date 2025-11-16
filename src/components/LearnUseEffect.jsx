@@ -1,33 +1,46 @@
 import React, { useEffect, useState } from 'react'
 
 const LearnUseEffect = () => {
-    const [count, setCount] = useState(0)
-    const [randomNum, setRandomNum] = useState(0)
+  // this is the counter state
+  const [count,  setCount] = useState(0)
+  
+  // this is the random number state
+  const [randomNum, setRandomNum] = useState(null)
 
-    const generateNum =() =>{
-        const randomNum = Math.floor(Math.random() * 100)
-        setRandomNum(randomNum)
-        console.log(randomNum)
-    }
+  // this is the function to handle the count increase
+  const increaseCount = () =>{
+    setCount(count + 1)
+  }
 
-    const increaseCount  = () =>{
-        setCount(count + 1)
+  // this is the function for random number gen
+  const generateRandomNum = () =>{
+    const randomNum = Math.floor(Math.random() * 100 )
+    // console.log(randomNum)
+    setRandomNum(randomNum)
+  }
+
+  useEffect(() =>{
+    // the logic later
+    console.log("use effect is called")
+
+    // clean up function
+    return () =>{
+      // this is the function that sets the new value
+      console.log("this is the cleanup")
     }
-    useEffect(() =>{
-        // the logic is right here
-        console.log("use effect is called")
-    })
+  }, 
+  // these are the dependencies, ie the things that when changed will cause use effect to be called
+  [count, randomNum]
+
+)
+
   return (
     <>
-    <h1>Count: {count}</h1>
+    <h2>Count : {count}</h2>
     <button onClick={increaseCount}>Increase count</button>
     <hr />
-    <h1>Random Number:{randomNum}</h1>
-    <button onClick={generateNum}>generate number</button>
-
-
-
-
+    <h1>Random number : {randomNum}</h1>
+    <button onClick={generateRandomNum}> generate number</button>
     </>
   )
 }

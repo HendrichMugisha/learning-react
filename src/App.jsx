@@ -7,41 +7,48 @@ import LearnLiftingStateUp from "./components/LearnLiftingStateUp"
 import LearnUseState from "./components/LearnUseState"
 import CounterApp from "./components/counterApp"
 import LearnUseEffect from "./components/LearnUseEffect"
+// import Mycounter from "./components/Mycounter"
+import MyUseState from "./components/MyUseState"
+import LearnUseMemo from "./components/LearnUseMemo"
 
 function App() {
-    // let price = 200;
-
-    const getStock = (data) =>{
-      console.log(data)
-    }
+  // let price = 200;
+  let init_count = 10;
+  const getStock = (data) => {
+    console.log(data)
+  }
 
   return (
-    <> 
-  <LearnUseEffect/>
+    <>
 
-     {/* <h1>App component</h1> */}
+<LearnUseMemo/>
 
-    {/* <CounterApp/> */}
+      {/* <MyUseState /> */}
+
+      {/* <LearnUseEffect/> */}
+
+      {/* <Mycounter init_value={init_count}/> */}
+
+      {/* <h1>App component</h1> */}
+
+      {/* <CounterApp/> */}
 
 
-
-
-
-{/* 
+      {/* 
       < LearnUseState/> */}
 
 
-{/* this is just for the lifting state up */}
-     {/* <LearnLiftingStateUp  getStock={getStock} /> */}
+      {/* this is just for the lifting state up */}
+      {/* <LearnLiftingStateUp  getStock={getStock} /> */}
 
 
 
-     {/* <LearnJSX/>  
+      {/* <LearnJSX/>  
      <LearnProps stock="Apple" price={price}/> */}
 
-    {/* <LearnEvent/> */}
+      {/* <LearnEvent/> */}
 
-     {/* < Hello />
+      {/* < Hello />
      <LearnReact/> */}
     </>
   )
