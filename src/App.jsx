@@ -37,7 +37,7 @@ function App() {
 
   return (
     <>
-    <LearnForms/>
+      <LearnForms />
       {/* <LearnLoadingImages /> */}
       {/* <LearnInlineCss/> */}
 
